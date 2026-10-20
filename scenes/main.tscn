@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://h382qjha4h11"]
+
+[ext_resource type="Script" uid="uid://yy6pl7ic13au" path="res://scripts/main.gd" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://ccm6le4qjosvk" path="res://scenes/runner.tscn" id="1_o5qli"]
+[ext_resource type="AudioStream" uid="uid://do88o1owrcnt6" path="res://assets/death.wav" id="3_sugp2"]
+[ext_resource type="FontFile" uid="uid://d0ltsgfh78r1q" path="res://assets/font.ttf" id="3_tbgi4"]
+[ext_resource type="AudioStream" uid="uid://bwdthgl5n5bmo" path="res://assets/interact.wav" id="4_jyhfs"]
+[ext_resource type="AudioStream" uid="uid://db4hxs0qxmcy1" path="res://assets/score-hit.wav" id="6_tefeu"]
+
+[node name="Main" type="Node2D" unique_id=1947157696 groups=["main_game"]]
+script = ExtResource("1_0wfyh")
+
+[node name="Runner" parent="." unique_id=736094797 instance=ExtResource("1_o5qli")]
+
+[node name="UI" type="Node2D" parent="." unique_id=383329121]
+
+[node name="CentralText" type="Label" parent="UI" unique_id=1461218208]
+offset_left = 80.0
+offset_top = 38.0
+offset_right = 220.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_tbgi4")
+theme_override_font_sizes/font_size = 6
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="RichTextLabel" parent="UI" unique_id=1401885090]
+offset_left = 48.0
+offset_right = 300.0
+offset_bottom = 40.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_tbgi4")
+theme_override_font_sizes/normal_font_size = 5
+bbcode_enabled = true
+horizontal_alignment = 2
+
+[node name="ScoreFrezze" type="Timer" parent="UI" unique_id=1522144488]
+
+[node name="DeathSfx" type="AudioStreamPlayer2D" parent="." unique_id=1725462015]
+stream = ExtResource("3_sugp2")
+
+[node name="InteractSfx" type="AudioStreamPlayer2D" parent="." unique_id=708001280]
+stream = ExtResource("4_jyhfs")
+volume_db = -20.0
+pitch_scale = 0.59
+
+[node name="ScoreHitSfx" type="AudioStreamPlayer2D" parent="." unique_id=1288157636]
+stream = ExtResource("6_tefeu")

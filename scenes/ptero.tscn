@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cevup72uyrs1y"]
+
+[ext_resource type="Texture2D" uid="uid://bh25008ntqnao" path="res://assets/Pterodactylus.png" id="1_k8k4g"]
+[ext_resource type="Script" uid="uid://bl2vk5trly0hj" path="res://scripts/moving_node.gd" id="1_ksykq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksykq"]
+atlas = ExtResource("1_k8k4g")
+region = Rect2(0, 0, 20, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vitff"]
+atlas = ExtResource("1_k8k4g")
+region = Rect2(20, 0, 20, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b0qxm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ksykq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vitff")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Ptero" type="CharacterBody2D" unique_id=468878820 groups=["obstacle"]]
+script = ExtResource("1_ksykq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=474257798]
+position = Vector2(0, -18)
+sprite_frames = SubResource("SpriteFrames_b0qxm")
+autoplay = "default"
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1061966362]
+visible = false
+polygon = PackedVector2Array(0, -12, 2, -12, 2, -14, 4, -14, 4, -15, 6, -15, 6, -13, 7, -13, 7, -11, 16, -11, 16, -9, 19, -9, 19, -6, 13, -6, 13, -4, 10, -4, 10, -6, 8, -6, 8, -9, 6, -9, 6, -10, 0, -10)

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dl4l8moet0udp"]
+
+[ext_resource type="Script" uid="uid://bl2vk5trly0hj" path="res://scripts/moving_node.gd" id="1_2kyfr"]
+[ext_resource type="Texture2D" uid="uid://b424xrjvki3l1" path="res://assets/cloud.png" id="1_vlwrh"]
+
+[node name="Cloud" type="CharacterBody2D" unique_id=1054069088 groups=["cloud"]]
+script = ExtResource("1_2kyfr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=856679168]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_vlwrh")
+centered = false

@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://ccm6le4qjosvk"]
+
+[ext_resource type="PackedScene" uid="uid://cw06a2euemlbk" path="res://scenes/background.tscn" id="1_5m7ui"]
+[ext_resource type="Script" uid="uid://c1jhx5qjke2mn" path="res://scripts/runner.gd" id="1_5qbmg"]
+[ext_resource type="PackedScene" uid="uid://bf2not5jmxxiu" path="res://scenes/player.tscn" id="2_fr80r"]
+[ext_resource type="Script" uid="uid://cpxqnuejypu6w" path="res://scripts/cloud_spawner.gd" id="3_a6sfn"]
+[ext_resource type="Script" uid="uid://djy3b7grvbt1b" path="res://scripts/spawner.gd" id="3_y21ji"]
+
+[node name="Runner" type="Node2D" unique_id=736094797]
+process_mode = 4
+script = ExtResource("1_5qbmg")
+
+[node name="Background" parent="." unique_id=2054566220 instance=ExtResource("1_5m7ui")]
+
+[node name="CloudSpawner" type="Node2D" parent="." unique_id=1442400568]
+script = ExtResource("3_a6sfn")
+
+[node name="SpawnTimer" type="Timer" parent="CloudSpawner" unique_id=1646665210]
+
+[node name="Player" parent="." unique_id=1344268092 instance=ExtResource("2_fr80r")]
+position = Vector2(16, 64)
+
+[node name="Spawner" type="Node2D" parent="." unique_id=1325632052]
+script = ExtResource("3_y21ji")
+
+[node name="SpawnTimer" type="Timer" parent="Spawner" unique_id=584785042]
+
+[node name="CactusPoint" type="Marker2D" parent="Spawner" unique_id=765017812]
+position = Vector2(300, 85)
+
+[node name="PteroPoint1" type="Marker2D" parent="Spawner" unique_id=2050958157]
+position = Vector2(300, 71)
+
+[node name="PteroPoint2" type="Marker2D" parent="Spawner" unique_id=1166038170]
+position = Vector2(300, 49)
+
+[node name="PteroPoint3" type="Marker2D" parent="Spawner" unique_id=360767397]
+position = Vector2(300, 26)

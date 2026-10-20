@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b73qb728mdsq4"]
+
+[ext_resource type="Script" uid="uid://bl2vk5trly0hj" path="res://scripts/moving_node.gd" id="1_iugou"]
+[ext_resource type="Texture2D" uid="uid://wtoy8nyipmvr" path="res://assets/cactus.png" id="1_nlugr"]
+
+[node name="Cactus" type="CharacterBody2D" unique_id=1674760673 groups=["obstacle"]]
+script = ExtResource("1_iugou")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1078649989]
+position = Vector2(0, -25.999998)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("1_nlugr")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=862330743]
+position = Vector2(13, -26)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("1_nlugr")
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=285161750]
+visible = false
+polygon = PackedVector2Array(5, -19, 5, -25, 22, -25, 22, -20, 26, -20, 26, 0, 1, 0, 1, -19)
