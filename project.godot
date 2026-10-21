@@ -13,7 +13,7 @@ config_version=5
 config/name="DININ"
 run/main_scene="uid://h382qjha4h11"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://b06qc5ahhpi32"
 
 [autoload]
 

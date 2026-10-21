@@ -64,7 +64,8 @@ func _process(delta: float) -> void:
 			if high_score == 0:
 				score_label.text = "%07d" % [int(score / 1500) * 1500]
 			else:
-				score_label.text = "[color=#6f6f6f]HI %07d[/color] %07d" % [int(high_score / 1500) * 1500, int(score / 1500) * 1500]
+				var hi_score_value = int(high_score / 1500) * 1500 if high_score == score else high_score
+				score_label.text = "[color=#6f6f6f]HI %07d[/color] %07d" % [hi_score_value, int(score / 1500) * 1500]
 
 		if score >= next_milestone:
 			next_milestone += 1500
