@@ -15,6 +15,10 @@ run/main_scene="uid://h382qjha4h11"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SaveManager="*uid://bt1ep24tv36ey"
+
 [display]
 
 window/size/viewport_width=300
@@ -50,7 +54,9 @@ interact={
 
 [physics]
 
+common/physics_jitter_fix=2.0
 3d/physics_engine="Jolt Physics"
+common/physics_interpolation=true
 
 [rendering]
 

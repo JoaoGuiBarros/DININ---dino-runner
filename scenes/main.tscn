@@ -6,6 +6,11 @@
 [ext_resource type="FontFile" uid="uid://d0ltsgfh78r1q" path="res://assets/font.ttf" id="3_tbgi4"]
 [ext_resource type="AudioStream" uid="uid://bwdthgl5n5bmo" path="res://assets/interact.wav" id="4_jyhfs"]
 [ext_resource type="AudioStream" uid="uid://db4hxs0qxmcy1" path="res://assets/score-hit.wav" id="6_tefeu"]
+[ext_resource type="Shader" uid="uid://bxk4x2mnpqlps" path="res://sharders/inverse.gdshader" id="7_o6xl0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b0qxm"]
+shader = ExtResource("7_o6xl0")
+shader_parameter/transition = 0.0
 
 [node name="Main" type="Node2D" unique_id=1947157696 groups=["main_game"]]
 script = ExtResource("1_0wfyh")
@@ -47,3 +52,14 @@ pitch_scale = 0.59
 
 [node name="ScoreHitSfx" type="AudioStreamPlayer2D" parent="." unique_id=1288157636]
 stream = ExtResource("6_tefeu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=811884280]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=253036421]
+visible = false
+material = SubResource("ShaderMaterial_b0qxm")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
